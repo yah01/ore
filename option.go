@@ -12,24 +12,24 @@ func None[T any]() Option[T] {
 	return Option[T]{value: nil}
 }
 
-func (opt *Option[T]) Some() bool {
+func (opt Option[T]) Some() bool {
 	return opt.value != nil
 }
 
-func (opt *Option[T]) Value() T {
+func (opt Option[T]) Value() T {
 	return *opt.value
 }
 
-func (opt *Option[T]) None() bool {
+func (opt Option[T]) None() bool {
 	return opt.value == nil
 }
 
-func (opt *Option[T]) BeSome(value T) Option[T] {
+func (opt Option[T]) BeSome(value T) Option[T] {
 	opt.value = &value
-	return *opt
+	return opt
 }
 
-func (opt *Option[T]) BeNone() Option[T] {
+func (opt Option[T]) BeNone() Option[T] {
 	opt.value = nil
-	return *opt
+	return opt
 }
