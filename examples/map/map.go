@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	. "github.com/yah01/result"
+	. "github.com/yah01/ore"
 )
 
 type Map[K comparable, V any] struct {
