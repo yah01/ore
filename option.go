@@ -20,6 +20,13 @@ func (opt Option[T]) Value() T {
 	return *opt.value
 }
 
+func (opt Option[T]) Unwrap() T {
+	if opt.value == nil {
+		panic("unwrap on nil value")
+	}
+	return *opt.value
+}
+
 func (opt Option[T]) None() bool {
 	return opt.value == nil
 }

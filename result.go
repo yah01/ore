@@ -31,6 +31,13 @@ func (result Result[T]) Value() T {
 	return *result.value
 }
 
+func (result Result[T]) Unwrap() T {
+	if result.value == nil {
+		panic("unwrap on nil value")
+	}
+	return *result.value
+}
+
 func (result Result[T]) Err() error {
 	return result.err
 }
