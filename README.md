@@ -55,3 +55,5 @@ func main() {
 }
 ```
 
+Refer to [examples](examples/) for more.
+
